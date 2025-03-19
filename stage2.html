@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01001000 01000101 01001100 01010000</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        body {
+            background-image: url("src/stage2bg.png");
+            background-size: 1920px 1080px;
+            background-repeat: no-repeat;
+        }
+        .doors {
+            display: flex;
+        }
+        .door1 {
+            flex-direction: row;
+            height:1080px;
+            width: 100%;
+            cursor: pointer;
+        }
+        
+        .door1:hover {
+            background-color: rgba(255, 255, 255, 0.041);
+        }
+        .door2 {
+            flex-direction: row;
+            height:1080px;
+            width: 100%;
+            cursor: pointer;
+        }
+        .door2:hover {
+            content: "1";
+            background-color: rgba(255, 255, 255, 0.041);
+        }
+        .door3 {
+            flex-direction: row;
+            height:1080px;
+            width: 100%;
+            cursor: pointer;
+        }
+        .door3:hover {
+            content: "1";
+            background-color: rgba(255, 255, 255, 0.041);
+        }
+    </style>
+</head>
+<!--lqmiexd.github.io/-->
+<body>
+    <audio autoplay id="audio">
+        <source src="src/stage2amb.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+     <div class="doors">
+        <div class="door1" id="door1">
+
+        </div>
+        <div class="door2" id="door2">
+
+        </div>
+        <div class="door3" id="door3">
+
+        </div>
+     </div>
+
+     <script>
+        document.getElementById("door1").addEventListener("click", function () {
+            window.open("door1.html");
+        });
+        document.getElementById("door2").addEventListener("click", function () {
+            window.open("door2.html");
+        });
+        document.getElementById("door3").addEventListener("click", function () {
+            window.open("door3.html");
+        });
+     </script>
+</body>
+</html>

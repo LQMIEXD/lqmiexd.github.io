@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01001000 01000101 01001100 01010000</title>
+    
+    <style>
+        body {
+            background-color: black;
+        }
+        img {
+            height: 130px;
+            width: 130px;
+            cursor: pointer;
+        }
+        video {
+            padding-left: 100px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="src/dichhead.png" id="dichhead">
+
+    <audio autoplay id="audio">
+        <source src="src/stage1amb.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div id="videoContainer">
+        <video class="video" id="video" width="279" height="95">
+            <source src="src/stage1rep.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+</body>
+
+<script>
+    document.getElementById("dichhead").addEventListener("click", function () {
+        let videoContainer = document.getElementById("videoContainer");
+        let video = document.getElementById("video");
+
+        video.style.display = "block";
+        video.play();
+    });
+
+    document.getElementById("video").addEventListener("ended", function () {
+        let audio = document.getElementById("audio");
+        if (audio) {
+            audio.pause();
+            audio.currentTime = 0;
+        }
+
+        let newTab = window.open("stage2.html", "_blank");
+
+        if (newTab) {
+            window.close();
+        } else {
+            alert("Браузер заблокировал закрытие вкладки. Закройте её вручную.");
+        }
+    });
+</script>
+
+</html>
